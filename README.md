@@ -45,6 +45,28 @@ python3 scripts/setup.py --venv
 source .venv/bin/activate
 ```
 
+## Troubleshooting
+
+### "Permission denied (publickey)" during install
+
+The installer clones via SSH by default. If you don't have SSH keys for GitHub, run this first:
+
+```bash
+git config --global url."https://github.com/".insteadOf "git@github.com:"
+```
+
+### SSH host key prompt hangs the installer
+
+If the install hangs asking about GitHub's host key authenticity, you can't type `yes` inside the plugin UI. Add the key beforehand:
+
+```bash
+ssh-keyscan github.com >> ~/.ssh/known_hosts
+```
+
+### Install fails in Claude Desktop
+
+Claude Desktop runs in a sandbox that may not have git access. Install via Claude Code CLI instead, or clone the plugin locally and point Claude Desktop to the directory.
+
 ## About
 
 PEACH STUDIO is a research lab working on AI-powered security tooling. We build plugins that do the tedious parts of threat analysis, compliance research, and sales prep so you can focus on the parts that need a human.

@@ -1,19 +1,19 @@
 {
-  "name": "peach-studio",
+  "name": "PEACH STUDIO Marketplace",
   "owner": {
     "name": "Vito Rallo",
     "email": "vito@peachstudio.be"
   },
   "metadata": {
     "description": "AI-powered cybersecurity, automation, and AI safety plugins by PEACH STUDIO. Research-driven tools for threat intelligence, security operations, and AI-augmented workflows.",
-    "version": "1.0.0"
+    "version": "1.0.1"
   },
   "plugins": [
     {
       "name": "business-profiler",
       "source": {
-        "source": "github",
-        "repo": "vitorallo/business-profiler",
+        "source": "url",
+        "url": "https://github.com/vitorallo/business-profiler.git",
         "ref": "main"
       },
       "description": "Cybersecurity threat intelligence, attack surface assessment, and strategic sales targeting. 7 skills: full-profile, threat-profile, attack-surface, threat-actors, ot-ics-assessment, incident-lookup, sales-targeting.",
