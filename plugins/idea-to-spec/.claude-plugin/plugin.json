@@ -1,7 +1,7 @@
 {
   "name": "idea-to-spec",
   "displayName": "Idea → Spec-Driven Development",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Drive a loose idea for any tool or software project to spec-driven implementation artifacts: discuss and scope it, research current options, write an extensive PRD and an epics breakdown, then codify each epic into validated OpenSpec changes (proposal → specs → design → tasks) via the openspec CLI. Includes an optional kickoff menu (Mermaid architecture diagram, README + private git repo, prior-art research, tech-stack discussion).",
   "author": {
     "name": "PEACH STUDIO"

@@ -6,14 +6,14 @@
   },
   "metadata": {
     "description": "AI-powered cybersecurity, automation, and AI safety plugins by PEACH STUDIO. Research-driven tools for threat intelligence, security operations, and AI-augmented workflows.",
-    "version": "1.0.2"
+    "version": "1.0.3"
   },
   "plugins": [
     {
       "name": "idea-to-spec",
       "source": "./plugins/idea-to-spec",
       "description": "Turn a loose idea for any tool or software into spec-driven artifacts: scope it, research options, write a PRD and epics, then codify each epic into validated OpenSpec changes (proposal → specs → design → tasks). Optional kickoff menu: Mermaid architecture, README + private git repo, prior-art research, tech-stack discussion.",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "author": {
         "name": "PEACH STUDIO"
       },

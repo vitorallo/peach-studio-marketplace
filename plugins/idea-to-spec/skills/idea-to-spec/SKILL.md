@@ -102,9 +102,16 @@ After `init`, open `openspec/config.yaml` and fill in the `context:` block (tech
 
 **The exact artifact formats matter** — scenarios in particular fail validation *silently* if you use the wrong number of hashtags, and the apply phase parses task checkboxes literally. Do not author from memory: before writing each change, read **`reference/openspec-formats.md`** for the precise format of proposal.md, specs/<capability>/spec.md, design.md, and tasks.md, plus the validation gotchas. When in doubt about a specific artifact, also run `openspec instructions <artifact> --change <name>` to get the CLI's own enriched guidance and template.
 
-## 8. Hand off to implementation
+## 8. Implement each change — with discipline
 
-Implement the changes in the dependency order from `docs/epics.md`. As each change is fully implemented and its `tasks.md` checkboxes are complete, archive it with `openspec archive <name>` so it folds into the project's main specs and clears the active queue.
+Implement the changes in the dependency order from `docs/epics.md`. For **every** change, hold to this discipline (don't skip it for "small" features):
+
+1. **Document as you build.** Update `docs/` (PRD/feature docs/README) in the same pass as the code — never "later". New feature or changed behavior ⇒ the docs change with it.
+2. **Write proper tests and make them pass.** Add real tests for the new behavior and actually run them until green before moving on. Don't mark a task done on untested code. Keep tests dependency-light so they run anywhere (e.g. on the dev box and inside the target container/CI).
+3. **Browser-test anything with a UI.** For web/UI features, verify real interaction with **Playwright** (or the **Claude Chrome extension**), not just unit tests — load the page, drive the flow, assert what the user sees.
+4. **Check off `tasks.md`** as each item lands, then **`openspec archive <name>`** once a change is fully implemented and its checkboxes are complete, so it folds into the project's main specs and clears the active queue.
+
+Treat docs + passing tests (+ browser check for UI) as the definition of done for a change, not optional extras.
 
 ## Reference files
 
