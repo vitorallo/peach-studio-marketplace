@@ -14,13 +14,25 @@ This works in Claude Code CLI, Claude Desktop, and the VS Code extension.
 
 | Plugin | Category | Description |
 |--------|----------|-------------|
+| [`idea-to-spec`](./plugins/idea-to-spec) | Automation | Turn an idea into a PRD, epics, and validated OpenSpec changes (spec-driven workflow) |
 | [`business-profiler`](https://github.com/vitorallo/business-profiler) | Cybersecurity | Threat intelligence, attack surface assessment, and strategic sales targeting (7 skills) |
 
 ### Install a plugin
 
 ```bash
+/plugin install idea-to-spec@peach-studio
 /plugin install business-profiler@peach-studio
 ```
+
+### idea-to-spec
+
+Spec-driven development workflow: take a half-formed idea for any tool or software and drive it to concrete, validated artifacts.
+
+| Skill | What it does |
+|-------|-------------|
+| `idea-to-spec` | Discuss & scope → research current options → write `docs/PRD.md` → break into `docs/epics.md` → codify each epic into a validated [OpenSpec](https://github.com/Fission-AI/OpenSpec) change (proposal → specs → design → tasks). Optional kickoff menu: Mermaid architecture diagram, README + private git repo, prior-art research, tech-stack discussion. |
+
+**Prerequisites:** the [`openspec`](https://github.com/Fission-AI/OpenSpec) CLI (`npm i -g openspec`, v1.2.0+) for the OpenSpec steps. The PRD/epics steps work without it.
 
 ### business-profiler
 
