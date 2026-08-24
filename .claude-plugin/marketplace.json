@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "AI-powered cybersecurity, automation, and AI safety plugins by PEACH STUDIO. Research-driven tools for threat intelligence, security operations, and AI-augmented workflows.",
-    "version": "1.0.3"
+    "version": "1.1.0"
   },
   "plugins": [
     {
@@ -39,6 +39,34 @@
       "repository": "https://github.com/vitorallo/business-profiler",
       "license": "MIT",
       "keywords": ["cybersecurity", "threat-intelligence", "attack-surface", "sales-targeting", "KYC", "OSINT"],
+      "category": "security"
+    },
+    {
+      "name": "email-verifier",
+      "source": "../email-verifier",
+      "description": "Find and verify a work email without sending mail. Give it a name + company (it discovers the address) or an address to check. Cross-plane verification — SMTP RCPT fused with the Microsoft 365 Entra identity plane (GetFederationInformation + ROPC AADSTS differential) — confirms addresses even on accept-all tenants where plain SMTP is blind, with automatic sibling-domain fallback (mail domain vs login/UPN domain) and free keyless OSINT (Gravatar/GitHub/web). 1 skill: email-finder.",
+      "version": "1.1.0",
+      "author": {
+        "name": "PEACH STUDIO"
+      },
+      "homepage": "https://www.peachstudio.be",
+      "repository": "https://github.com/vitorallo/peach-studio-marketplace",
+      "license": "MIT",
+      "keywords": ["email-verification", "email-finder", "OSINT", "microsoft365", "entra", "smtp", "prospecting"],
+      "category": "security"
+    },
+    {
+      "name": "peach-vulnhunt",
+      "source": "../peach-vulnhunt",
+      "description": "Hunt for real, exploitable vulnerabilities and produce disclosure-ready reports. Two skills: vulnhunt (modern web apps \u2014 IDOR/BOLA, broken access control, privilege escalation, OWASP Top 10) and sysvulnhunt (C/C++ system code \u2014 memory corruption, RCE, privilege escalation). Scan locally (private) or via AWS Bedrock (higher recall), triage, build PoCs, report. Powered by the foil scanner.",
+      "version": "2.0.0",
+      "author": {
+        "name": "PEACH STUDIO"
+      },
+      "homepage": "https://www.peachstudio.be",
+      "repository": "https://github.com/vitorallo/peach-studio-marketplace",
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "keywords": ["security", "vulnerability-research", "appsec", "web-security", "owasp", "owasp-top-10", "idor", "bola", "access-control", "business-logic", "privilege-escalation", "session-security", "nodejs", "spring", "django", "c-cpp", "embedded-systems", "ics", "kernel", "cve", "exploit", "foil"],
       "category": "security"
     }
   ]
