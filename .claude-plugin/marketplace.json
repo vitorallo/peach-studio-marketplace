@@ -6,13 +6,31 @@
   },
   "metadata": {
     "description": "AI-powered cybersecurity, automation, and AI safety plugins by PEACH STUDIO. Research-driven tools for threat intelligence, security operations, and AI-augmented workflows.",
-    "version": "1.1.0"
+    "version": "1.2.0"
   },
   "plugins": [
     {
+      "name": "ps-spec",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/vitorallo/ps-spec.git",
+        "ref": "main"
+      },
+      "description": "Epic-driven development on OpenSpec: idea or PRD → EPICS.md with user stories → one OpenSpec change per epic (proposal, specs, design, tasks, test-plan) → git branch → code with observability → test plan with interactive debugging → feature doc → archive + merge. Four human checkpoints with an autonomous coding loop between them. Rules guard hook makes openspec config.yaml rules reach the model before every artifact write; secure-coding rule packs (OWASP 2025, MCP/AI/agent/RAG, per-language/framework) installed at init. Successor of idea-to-spec.",
+      "version": "1.0.0",
+      "author": {
+        "name": "PEACH STUDIO"
+      },
+      "homepage": "https://www.peachstudio.be",
+      "repository": "https://github.com/vitorallo/ps-spec",
+      "license": "MIT",
+      "keywords": ["spec-driven", "openspec", "prd", "epics", "user-stories", "test-plan", "observability", "secure-coding", "owasp", "human-in-the-loop", "agentic-workflow"],
+      "category": "automation"
+    },
+    {
       "name": "idea-to-spec",
       "source": "./plugins/idea-to-spec",
-      "description": "Turn a loose idea for any tool or software into spec-driven artifacts: scope it, research options, write a PRD and epics, then codify each epic into validated OpenSpec changes (proposal → specs → design → tasks). Optional kickoff menu: Mermaid architecture, README + private git repo, prior-art research, tech-stack discussion.",
+      "description": "Superseded by ps-spec (same author; adds test plans, checkpoints, observability, secure-coding rules). Turn a loose idea for any tool or software into spec-driven artifacts: scope it, research options, write a PRD and epics, then codify each epic into validated OpenSpec changes (proposal → specs → design → tasks). Optional kickoff menu: Mermaid architecture, README + private git repo, prior-art research, tech-stack discussion.",
       "version": "1.1.0",
       "author": {
         "name": "PEACH STUDIO"

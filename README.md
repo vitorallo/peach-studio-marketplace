@@ -14,17 +14,38 @@ This works in Claude Code CLI, Claude Desktop, and the VS Code extension.
 
 | Plugin | Category | Description |
 |--------|----------|-------------|
-| [`idea-to-spec`](./plugins/idea-to-spec) | Automation | Turn an idea into a PRD, epics, and validated OpenSpec changes (spec-driven workflow) |
+| [`ps-spec`](https://github.com/vitorallo/ps-spec) | Automation | Epic-driven development on OpenSpec: PRD → epics → one change per epic → branch → code → test plan → doc → merge, with four human checkpoints, a rules guard and secure-coding rule packs |
+| [`idea-to-spec`](./plugins/idea-to-spec) | Automation | Turn an idea into a PRD, epics, and validated OpenSpec changes (spec-driven workflow). *Superseded by `ps-spec`.* |
 | [`business-profiler`](https://github.com/vitorallo/business-profiler) | Cybersecurity | Threat intelligence, attack surface assessment, and strategic sales targeting (7 skills) |
 
 ### Install a plugin
 
 ```bash
+/plugin install ps-spec@peach-studio
 /plugin install idea-to-spec@peach-studio
 /plugin install business-profiler@peach-studio
 ```
 
+### ps-spec
+
+Epic-driven development on [OpenSpec](https://github.com/Fission-AI/OpenSpec), from an idea or a PRD to shipped, tested, documented features — one epic = one OpenSpec change = one git branch = one feature doc.
+
+```
+PRD → [CP1] → EPICS (stories) → [CP2] → plan epic → [CP3] → git branch → code
+      → test / fix loop → review & clean up → doc → [CP4] → archive + merge → next epic
+```
+
+| Skill | What it does |
+|-------|-------------|
+| `ps-spec` | `ps-spec next` detects the phase from repo state and runs it: `init` (openspec + custom schema + hooks + secure-coding rules) · `prd` · `epics` · `plan E0N` · `code` · `test` · `doc` · `close`. Four human checkpoints (PRD, epics, plan, validate) with an autonomous agentic coding loop between them. Adds a `test-plan.md` artifact with interactive cases (Playwright / Chrome / http / console), an Observability and a Security section in every design, tasks ticked as they land, `doc/<feature>.md` as project memory. |
+
+What makes it different from writing artifacts by hand: a **rules guard** hook blocks any artifact write until `openspec instructions` (which carries your `config.yaml` rules) has been fetched in the session, and `init` installs **secure-coding rule packs** (OWASP Top 10 2025, MCP/AI/agent/RAG, per-language and per-framework, from [TikiTribe/claude-secure-coding-rules](https://github.com/TikiTribe/claude-secure-coding-rules)) into `.claude/rules/security/`, path-scoped so they cost context only when relevant.
+
+**Prerequisites:** Node ≥ 20.19 and git; the [`openspec`](https://github.com/Fission-AI/OpenSpec) CLI (≥ 1.13) is installed by `init` if missing. Full docs: [ps-spec README](https://github.com/vitorallo/ps-spec#readme). For the [pi coding agent](https://github.com/earendil-works/pi): [`ps-spec-pi`](https://github.com/vitorallo/ps-spec-pi) (`pi install git:github.com/vitorallo/ps-spec-pi`).
+
 ### idea-to-spec
+
+> Superseded by **ps-spec**, which covers the same idea → PRD → epics → OpenSpec flow and continues through implementation, testing and docs. Kept for existing users.
 
 Spec-driven development workflow: take a half-formed idea for any tool or software and drive it to concrete, validated artifacts.
 
