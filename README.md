@@ -15,7 +15,7 @@ This works in Claude Code CLI, Claude Desktop, and the VS Code extension.
 | Plugin | Category | Description |
 |--------|----------|-------------|
 | [`ps-spec`](https://github.com/vitorallo/ps-spec) | Automation | Epic-driven development on OpenSpec: PRD → epics → one change per epic → branch → code → test plan → doc → merge, with four human checkpoints, a rules guard and secure-coding rule packs |
-| [`idea-to-spec`](./plugins/idea-to-spec) | Automation | Turn an idea into a PRD, epics, and validated OpenSpec changes (spec-driven workflow). *Superseded by `ps-spec`.* |
+| [`idea-to-spec`](https://github.com/vitorallo/idea-to-spec) | Automation | Turn an idea into a PRD, epics, and validated OpenSpec changes (spec-driven workflow). *Superseded by `ps-spec`.* |
 | [`business-profiler`](https://github.com/vitorallo/business-profiler) | Cybersecurity | Threat intelligence, attack surface assessment, and strategic sales targeting (7 skills) |
 
 ### Install a plugin

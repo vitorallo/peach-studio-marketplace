@@ -24,21 +24,45 @@
       "homepage": "https://www.peachstudio.be",
       "repository": "https://github.com/vitorallo/ps-spec",
       "license": "MIT",
-      "keywords": ["spec-driven", "openspec", "prd", "epics", "user-stories", "test-plan", "observability", "secure-coding", "owasp", "human-in-the-loop", "agentic-workflow"],
+      "keywords": [
+        "spec-driven",
+        "openspec",
+        "prd",
+        "epics",
+        "user-stories",
+        "test-plan",
+        "observability",
+        "secure-coding",
+        "owasp",
+        "human-in-the-loop",
+        "agentic-workflow"
+      ],
       "category": "automation"
     },
     {
       "name": "idea-to-spec",
-      "source": "./plugins/idea-to-spec",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/vitorallo/idea-to-spec.git",
+        "ref": "main"
+      },
       "description": "Superseded by ps-spec (same author; adds test plans, checkpoints, observability, secure-coding rules). Turn a loose idea for any tool or software into spec-driven artifacts: scope it, research options, write a PRD and epics, then codify each epic into validated OpenSpec changes (proposal → specs → design → tasks). Optional kickoff menu: Mermaid architecture, README + private git repo, prior-art research, tech-stack discussion.",
       "version": "1.1.0",
       "author": {
         "name": "PEACH STUDIO"
       },
       "homepage": "https://www.peachstudio.be",
-      "repository": "https://github.com/vitorallo/peach-studio-marketplace",
+      "repository": "https://github.com/vitorallo/idea-to-spec",
       "license": "MIT",
-      "keywords": ["spec-driven", "openspec", "prd", "epics", "planning", "scaffolding", "architecture"],
+      "keywords": [
+        "spec-driven",
+        "openspec",
+        "prd",
+        "epics",
+        "planning",
+        "scaffolding",
+        "architecture"
+      ],
       "category": "automation"
     },
     {
@@ -56,7 +80,14 @@
       "homepage": "https://www.peachstudio.be",
       "repository": "https://github.com/vitorallo/business-profiler",
       "license": "MIT",
-      "keywords": ["cybersecurity", "threat-intelligence", "attack-surface", "sales-targeting", "KYC", "OSINT"],
+      "keywords": [
+        "cybersecurity",
+        "threat-intelligence",
+        "attack-surface",
+        "sales-targeting",
+        "KYC",
+        "OSINT"
+      ],
       "category": "security"
     },
     {
@@ -70,13 +101,21 @@
       "homepage": "https://www.peachstudio.be",
       "repository": "https://github.com/vitorallo/peach-studio-marketplace",
       "license": "MIT",
-      "keywords": ["email-verification", "email-finder", "OSINT", "microsoft365", "entra", "smtp", "prospecting"],
+      "keywords": [
+        "email-verification",
+        "email-finder",
+        "OSINT",
+        "microsoft365",
+        "entra",
+        "smtp",
+        "prospecting"
+      ],
       "category": "security"
     },
     {
       "name": "peach-vulnhunt",
       "source": "../peach-vulnhunt",
-      "description": "Hunt for real, exploitable vulnerabilities and produce disclosure-ready reports. Two skills: vulnhunt (modern web apps \u2014 IDOR/BOLA, broken access control, privilege escalation, OWASP Top 10) and sysvulnhunt (C/C++ system code \u2014 memory corruption, RCE, privilege escalation). Scan locally (private) or via AWS Bedrock (higher recall), triage, build PoCs, report. Powered by the foil scanner.",
+      "description": "Hunt for real, exploitable vulnerabilities and produce disclosure-ready reports. Two skills: vulnhunt (modern web apps — IDOR/BOLA, broken access control, privilege escalation, OWASP Top 10) and sysvulnhunt (C/C++ system code — memory corruption, RCE, privilege escalation). Scan locally (private) or via AWS Bedrock (higher recall), triage, build PoCs, report. Powered by the foil scanner.",
       "version": "2.0.0",
       "author": {
         "name": "PEACH STUDIO"
@@ -84,7 +123,30 @@
       "homepage": "https://www.peachstudio.be",
       "repository": "https://github.com/vitorallo/peach-studio-marketplace",
       "license": "PolyForm-Noncommercial-1.0.0",
-      "keywords": ["security", "vulnerability-research", "appsec", "web-security", "owasp", "owasp-top-10", "idor", "bola", "access-control", "business-logic", "privilege-escalation", "session-security", "nodejs", "spring", "django", "c-cpp", "embedded-systems", "ics", "kernel", "cve", "exploit", "foil"],
+      "keywords": [
+        "security",
+        "vulnerability-research",
+        "appsec",
+        "web-security",
+        "owasp",
+        "owasp-top-10",
+        "idor",
+        "bola",
+        "access-control",
+        "business-logic",
+        "privilege-escalation",
+        "session-security",
+        "nodejs",
+        "spring",
+        "django",
+        "c-cpp",
+        "embedded-systems",
+        "ics",
+        "kernel",
+        "cve",
+        "exploit",
+        "foil"
+      ],
       "category": "security"
     }
   ]
