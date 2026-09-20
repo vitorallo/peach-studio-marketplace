@@ -16,6 +16,7 @@ This works in Claude Code CLI, Claude Desktop, and the VS Code extension.
 |--------|----------|-------------|
 | [`ps-spec`](https://github.com/vitorallo/ps-spec) | Automation | Epic-driven development on OpenSpec: PRD → epics → one change per epic → branch → code → test plan → doc → merge, with four human checkpoints, a rules guard and secure-coding rule packs |
 | [`idea-to-spec`](https://github.com/vitorallo/idea-to-spec) | Automation | Turn an idea into a PRD, epics, and validated OpenSpec changes (spec-driven workflow). *Superseded by `ps-spec`.* |
+| [`ps-vulnscan`](https://github.com/vitorallo/ps-vulnscan) | Cybersecurity | Rule-driven security scanning: detect the stack, model the app's authorization, scan against matching secure-coding rule packs, one report with CVSS |
 | [`business-profiler`](https://github.com/vitorallo/business-profiler) | Cybersecurity | Threat intelligence, attack surface assessment, and strategic sales targeting (7 skills) |
 
 ### Install a plugin
@@ -23,6 +24,7 @@ This works in Claude Code CLI, Claude Desktop, and the VS Code extension.
 ```bash
 /plugin install ps-spec@peach-studio
 /plugin install idea-to-spec@peach-studio
+/plugin install ps-vulnscan@peach-studio
 /plugin install business-profiler@peach-studio
 ```
 
@@ -54,6 +56,28 @@ Spec-driven development workflow: take a half-formed idea for any tool or softwa
 | `idea-to-spec` | Discuss & scope → research current options → write `docs/PRD.md` → break into `docs/epics.md` → codify each epic into a validated [OpenSpec](https://github.com/Fission-AI/OpenSpec) change (proposal → specs → design → tasks). Optional kickoff menu: Mermaid architecture diagram, README + private git repo, prior-art research, tech-stack discussion. |
 
 **Prerequisites:** the [`openspec`](https://github.com/Fission-AI/OpenSpec) CLI (`npm i -g openspec`, v1.2.0+) for the OpenSpec steps. The PRD/epics steps work without it.
+
+### ps-vulnscan
+
+Rule-driven security scanning. The rule packs are chosen for the stack the project actually uses, and the scan runs against them.
+
+```
+stack ID → app/auth model → rule packs [you confirm] → scan & confirm → one report
+```
+
+| Skill | What it does |
+|-------|-------------|
+| `ps-vulnscan` | Detects languages, frameworks and AI surface from the manifests; models identities, roles, tenancy and authorization into `security/MODEL.md`; proposes the matching rule packs and downloads them from [claude-secure-coding-rules](https://github.com/TikiTribe/claude-secure-coding-rules); reviews the source against them; writes `security/findings/<target>-security-report.md` with severity, CVSS v3.1, CWE and remediation per finding. |
+
+Leads with broken access control — IDOR/BOLA, missing function-level authorization, cross-tenant leaks — the class no rule file can decide without knowing the app's ownership model, which is why the model comes before the scan. Then injection, SSRF, deserialization, session and JWT flaws, mass assignment, upload and traversal, committed secrets.
+
+One human checkpoint: you see the proposed packs and the engine choice, and nothing is downloaded until you approve. Rule-driven grep and source review by default; semgrep OSS optional. Nothing is executed — no requests, no exploitation, no PoCs.
+
+**Prerequisites:** git (for the one-time rules clone). semgrep is optional: `brew install semgrep` or `pipx install semgrep`.
+
+**On pi:** [`ps-vulnscan-pi`](https://github.com/vitorallo/ps-vulnscan-pi) — same method, with the checkpoint enforced by a pi extension (`pi install git:github.com/vitorallo/ps-vulnscan-pi`).
+
+Deeper work — chained attack scenarios, PoCs, coordinated disclosure — is [`peach-vulnhunt`](https://github.com/vitorallo/peach-vulnhunt).
 
 ### business-profiler
 
