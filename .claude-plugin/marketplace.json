@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "AI-powered cybersecurity, automation, and AI safety plugins by PEACH STUDIO. Research-driven tools for threat intelligence, security operations, and AI-augmented workflows.",
-    "version": "1.3.0"
+    "version": "1.4.0"
   },
   "plugins": [
     {
@@ -187,6 +187,35 @@
         "cve",
         "exploit",
         "foil"
+      ],
+      "category": "security"
+    },
+    {
+      "name": "spiderdiff",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/vitorallo/spiderdiff.git",
+        "ref": "main"
+      },
+      "description": "Windows patch-diff vulnerability research. Point it at a pre/post-patch binary pair (PE+PDB) and in minutes get a symbol-grounded, function-level root-cause explanation — with or without a CVE. Answers four questions for every patch: what it fixed, whether the fix holds up, what else it silently changed, and whether the same mistake recurs unpatched elsewhere. Optional, human-gated sandbox PoC ladder (reachability → trigger). 6 skills (patch-diff, cve-correlate, variant-hunt, acquire-binaries, poc-ladder, case-report) plus an autonomous spiderdiff-researcher agent that runs the whole pipeline end-to-end. Deterministic Ghidra/ghidriff-backed tools produce the facts; Claude reasons over them — never an exploitability verdict, enrichment always untrusted and attributed, PoC execution sandbox-only against authorized targets.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Vito Rallo"
+      },
+      "repository": "https://github.com/vitorallo/spiderdiff",
+      "license": "UNLICENSED",
+      "keywords": [
+        "windows",
+        "patch-diff",
+        "reverse-engineering",
+        "ghidra",
+        "ghidriff",
+        "cve",
+        "vulnerability-research",
+        "poc",
+        "symbol-grounded",
+        "variant-analysis",
+        "autonomous-agent"
       ],
       "category": "security"
     }
